@@ -64,6 +64,31 @@ header p {
   border-style: solid;
 }
 
+.button-row {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+button {
+  padding: 8px 14px;
+
+  border: 1px solid #999;
+  border-radius: 8px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  font: inherit;
+}
+
+button:hover {
+  background: #f5f5f5;
+}
+
 .status,
 .summary {
   margin-top: 12px;
