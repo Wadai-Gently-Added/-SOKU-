@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>束 -SOKU-</title>
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>束 -SOKU-</h1>
+      <p>AI File Bundle &amp; Transfer Control Tool</p>
+    </header>
+
+    <section class="panel">
+      <h2>機能01：フォルダ投入</h2>
+
+      <p>
+        フォルダを選択すると、
+        サブフォルダを含むファイル一覧を取得します。
+      </p>
+
+      <label class="drop-area" id="dropArea" for="folderInput">
+        <strong>フォルダを選択</strong>
+        <span>またはここへフォルダをドロップ</span>
+      </label>
+
+      <input
+        id="folderInput"
+        type="file"
+        webkitdirectory
+        directory
+        multiple
+        hidden
+      >
+
+      <div id="status" class="status">未選択</div>
+      <div id="summary" class="summary"></div>
+
+      <pre
+        id="fileList"
+        class="file-list"
+        aria-live="polite"
+      ></pre>
+    </section>
+  </main>
+
+  <script
+    type="module"
+    src="./js/input/folderInput.js"
+  ></script>
+</body>
+</html>
