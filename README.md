@@ -81,6 +81,35 @@ ZIPを展開した後は、
 
 ---
 
+## 機能03：ファイルツリー生成
+
+取得したファイルの相対パスから、
+元のフォルダ構造をツリー形式で生成します。
+
+### 対応内容
+
+- 相対パスを解析
+- フォルダ階層を再構築
+- `├─` `└─` 形式で表示
+- フォルダを先に表示
+- 日本語ファイル名に対応
+- ファイル総数を表示
+- フォルダ総数を表示
+
+生成したツリーは、
+
+`window.sokuFileTree`
+
+に保持します。
+
+統計情報は、
+
+`window.sokuFileTreeStats`
+
+に保持します。
+
+---
+
 # フォルダ構造
 
 ```text
@@ -91,6 +120,8 @@ ZIPを展開した後は、
 │   └── base.css
 └── js/
     ├── core/
-    └── input/
-        ├── folderInput.js
-        └── archiveInput.js
+    ├── input/
+    │   ├── folderInput.js
+    │   └── archiveInput.js
+    └── tree/
+        └── fileTree.js
