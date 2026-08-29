@@ -4,12 +4,14 @@
 
 body {
   margin: 0;
+
   font-family:
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
   line-height: 1.6;
 }
 
@@ -31,24 +33,30 @@ header p {
 }
 
 .panel {
+  margin-bottom: 24px;
+
   border: 1px solid #ccc;
   border-radius: 12px;
+
   padding: 24px;
 }
 
 .drop-area {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   min-height: 180px;
+
   margin: 20px 0;
 
   border: 2px dashed #999;
   border-radius: 12px;
 
   cursor: pointer;
+
   text-align: center;
 }
 
@@ -61,8 +69,10 @@ header p {
   margin-top: 12px;
 }
 
-.file-list {
+.file-list,
+.file-tree {
   max-height: 420px;
+
   overflow: auto;
 
   padding: 16px;
@@ -71,5 +81,19 @@ header p {
   border-radius: 8px;
 
   white-space: pre-wrap;
+
   overflow-wrap: anywhere;
+}
+
+.file-tree {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  line-height: 1.5;
 }
