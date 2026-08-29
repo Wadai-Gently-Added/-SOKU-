@@ -6,13 +6,18 @@
   <title>束 -SOKU-</title>
   <link rel="stylesheet" href="./css/base.css">
 </head>
+
 <body>
   <main class="app">
+
     <header>
       <h1>束 -SOKU-</h1>
       <p>AI File Bundle &amp; Transfer Control Tool</p>
     </header>
 
+    <!-- ==========================================
+         機能01：フォルダ投入
+         ========================================== -->
     <section class="panel">
       <h2>機能01：フォルダ投入</h2>
 
@@ -21,7 +26,11 @@
         サブフォルダを含むファイル一覧を取得します。
       </p>
 
-      <label class="drop-area" id="dropArea" for="folderInput">
+      <label
+        class="drop-area"
+        id="dropArea"
+        for="folderInput"
+      >
         <strong>フォルダを選択</strong>
         <span>またはここへフォルダをドロップ</span>
       </label>
@@ -35,8 +44,17 @@
         hidden
       >
 
-      <div id="status" class="status">未選択</div>
-      <div id="summary" class="summary"></div>
+      <div
+        id="status"
+        class="status"
+      >
+        未選択
+      </div>
+
+      <div
+        id="summary"
+        class="summary"
+      ></div>
 
       <pre
         id="fileList"
@@ -44,11 +62,78 @@
         aria-live="polite"
       ></pre>
     </section>
+
+
+    <!-- ==========================================
+         機能02：ZIP / アーカイブ投入
+         ========================================== -->
+    <section class="panel">
+
+      <h2>機能02：ZIP / アーカイブ投入</h2>
+
+      <p>
+        ZIPファイルを選択すると、
+        内部のフォルダ構造を維持したまま展開します。
+      </p>
+
+      <label for="archiveInput">
+        ZIPファイルを選択
+      </label>
+
+      <input
+        id="archiveInput"
+        type="file"
+        accept=".zip,application/zip"
+      >
+
+      <div
+        id="archiveStatus"
+        class="status"
+      >
+        未選択
+      </div>
+
+      <div
+        id="archiveSummary"
+        class="summary"
+      ></div>
+
+      <pre
+        id="archiveFileList"
+        class="file-list"
+        aria-live="polite"
+      ></pre>
+
+    </section>
+
+
   </main>
 
+
+  <!-- ==========================================
+       ZIP処理ライブラリ
+       ========================================== -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"
+  ></script>
+
+
+  <!-- ==========================================
+       機能01：フォルダ投入
+       ========================================== -->
   <script
     type="module"
     src="./js/input/folderInput.js"
   ></script>
+
+
+  <!-- ==========================================
+       機能02：ZIP / アーカイブ投入
+       ========================================== -->
+  <script
+    type="module"
+    src="./js/input/archiveInput.js"
+  ></script>
+
 </body>
 </html>
